@@ -10,3 +10,10 @@ for (let index = 0; index < 4; index += 1) {
   div.style.backgroundColor = cores[index];
   colorPalette.appendChild(div);
 }
+
+const pixelBoard = document.getElementById('pixel-board')
+for(let index = 0; index < 25; index += 1) {
+  const div = document.createElement('div');
+  div.className = 'pixel';
+  pixelBoard.appendChild(div);
+}
