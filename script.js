@@ -1,4 +1,9 @@
-// window.onload = {}
+function turnBlackSelected() {
+  const colorPalette1 = document.getElementById('color-palette');
+  colorPalette1.firstElementChild.classList.add('selected');
+}
+
+window.onload = turnBlackSelected;
 
 const colorPalette = document.getElementById('color-palette');
 console.log(colorPalette);
