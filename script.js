@@ -6,8 +6,6 @@ function turnBlackSelected() {
 window.onload = turnBlackSelected;
 
 const colorPalette = document.getElementById('color-palette');
-console.log(colorPalette);
-
 const cores = ['black', 'yellow', 'blue', 'red'];
 for (let index = 0; index < 4; index += 1) {
   const div = document.createElement('div');
@@ -23,6 +21,7 @@ for (let index = 0; index < 5; index += 1) {
   for (let index2 = 0; index2 < 5; index2 += 1) {
     const tDiv = document.createElement('td');
     tDiv.className = 'pixel';
+    tDiv.style.backgroundColor = 'white';
     pixelBoard.children[index].appendChild(tDiv);
   }
 }
@@ -81,3 +80,16 @@ colorBlack.addEventListener('click', turnSelectedBlack);
 colorRed.addEventListener('click', turnSelectedRed);
 colorYellow.addEventListener('click', turnSelectedYellow);
 colorBlue.addEventListener('click', turnSelectedBlue);
+
+const pixels = document.getElementsByTagName('td');
+
+function turnSameColor(event) {
+  const selectedColor = document.getElementsByClassName('selected')[0];
+  if (event.target.style.backgroundColor !== selectedColor.style.backgroundColor) {
+    event.target.style.backgroundColor = selectedColor.style.backgroundColor;
+  }
+}
+
+for (let index = 0; index < pixels.length; index += 1) {
+  pixels[index].addEventListener('click', turnSameColor);
+}
