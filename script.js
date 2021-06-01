@@ -93,3 +93,12 @@ function turnSameColor(event) {
 for (let index = 0; index < pixels.length; index += 1) {
   pixels[index].addEventListener('click', turnSameColor);
 }
+
+function eraserBoard(event) {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+}
+
+const button = document.getElementById('clear-board');
+button.addEventListener('click', eraserBoard);
