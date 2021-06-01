@@ -26,3 +26,58 @@ for (let index = 0; index < 5; index += 1) {
     pixelBoard.children[index].appendChild(tDiv);
   }
 }
+
+const colors = document.getElementsByClassName('color');
+const colorBlack = colors[0];
+const colorYellow = colors[1];
+const colorBlue = colors[2];
+const colorRed = colors[3];
+
+function turnSelectedBlack(event) {
+  if (event.target.classList.contains('selected') === true) {
+    // empty
+  } if (event.target.classList.contains('selected') === false) {
+    colorYellow.classList.remove('selected');
+    colorBlue.classList.remove('selected');
+    colorRed.classList.remove('selected');
+    colorBlack.classList.add('selected');
+  }
+}
+
+function turnSelectedBlue(event) {
+  if (event.target.classList.contains('selected') === true) {
+    // empty
+  } if (event.target.classList.contains('selected') === false) {
+    colorBlack.classList.remove('selected');
+    colorYellow.classList.remove('selected');
+    colorRed.classList.remove('selected');
+    colorBlue.classList.add('selected');
+  }
+}
+
+function turnSelectedRed(event) {
+  if (event.target.classList.contains('selected') === true) {
+    // empty
+  } if (event.target.classList.contains('selected') === false) {
+    colorBlack.classList.remove('selected');
+    colorYellow.classList.remove('selected');
+    colorBlue.classList.remove('selected');
+    colorRed.classList.add('selected');
+  }
+}
+
+function turnSelectedYellow(event) {
+  if (event.target.classList.contains('selected') === true) {
+    // empty
+  } if (event.target.classList.contains('selected') === false) {
+    colorBlack.classList.remove('selected');
+    colorBlue.classList.remove('selected');
+    colorRed.classList.remove('selected');
+    colorYellow.classList.add('selected');
+  }
+}
+
+colorBlack.addEventListener('click', turnSelectedBlack);
+colorRed.addEventListener('click', turnSelectedRed);
+colorYellow.addEventListener('click', turnSelectedYellow);
+colorBlue.addEventListener('click', turnSelectedBlue);
