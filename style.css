@@ -1,0 +1,18 @@
+.color {
+  border: 1px solid black;
+  display: inline-block;
+  height: 50px;
+  margin-left: 7%;
+  margin-right: 7%;
+  width: 10%;
+}
+
+#color-palette {
+  height: 51px;
+  margin-left: 25%;
+  width: 50%;
+}
+
+#title {
+  text-align: center;
+}
