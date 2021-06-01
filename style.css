@@ -1,10 +1,10 @@
 .color {
   border: 1px solid black;
   display: inline-block;
-  height: 50px;
-  margin-left: 7%;
-  margin-right: 7%;
-  width: 10%;
+  height: 41px;
+  margin-left: 8.6%;
+  margin-right: 8.6%;
+  width: 7%;
 }
 
 .pixel {
@@ -15,14 +15,17 @@
 }
 
 #color-palette {
-  height: 51px;
+  height: 41px;
   margin-left: 25%;
   width: 50%;
 }
 
 #pixel-board {
-    border: 1px solid black;
-    display: table;
+  border: 1px solid black;
+  display: table;
+  margin-left: 41.5%;
+  margin-right: 41.5%;
+  margin-top: 40px;
 }
 
 #title {
