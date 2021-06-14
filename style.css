@@ -30,9 +30,6 @@
 #pixel-board {
   border: 1px solid black;
   display: table;
-  margin-left: 41.5%;
-  margin-right: 41.5%;
-  margin-top: 40px;
 }
 
 #title {
