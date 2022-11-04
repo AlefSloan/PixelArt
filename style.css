@@ -1,10 +1,61 @@
+body{
+  background-image: url('./public/sleepguy.png');
+  background-size: cover;
+  
+  
+  
+  height: 100vh;
+  padding:0;
+  margin:0;
+}
+
+#title {
+  color: white;
+  font-size: xx-large;
+  text-align: center;
+}
+
+#main-section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+#palette-section {
+  display: flex;
+  flex-direction: column;
+
+}
+
+#painel-section {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+#board-section {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+#painel-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#pixel-board {
+  border: 1px solid black;
+  display: table;
+  justify-self: center;
+}
+
 .color {
   border: 1px solid black;
   display: inline-block;
-  height: 41px;
-  margin-left: 8.6%;
-  margin-right: 8.6%;
-  width: 7%;
+  height: 40px;
+  width: 40px;
 }
 
 .pixel {
@@ -13,25 +64,56 @@
   height: 40px;
 }
 
+#generate-board {
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+  outline: 0;
+}
+
 #clear-board {
-  height: 20px;
-  margin-left: 46.7%;
-  margin-right: 47.5%;
-  margin-top: 30px;
+  height: 30px;
   width: 70px;
+  border-radius: 5px;
+  outline: 0;
+}
+
+#board-size {
+  text-align: center;
+  height: 25px;
+  width: 25px;
+  border-radius: 5px;
+  outline: 0;
 }
 
 #color-palette {
-  height: 41px;
-  margin-left: 25%;
-  width: 50%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  height: 60px;
+  width: 250px;
+  flex-grow: 1;
+  width: 100%;
 }
 
-#pixel-board {
-  border: 1px solid black;
-  display: table;
-}
-
-#title {
+#palette-size {
   text-align: center;
+  height: 25px;
+  width: 25px;
+  border-radius: 5px;
+  outline: 0;
+}
+
+#generate-palette {
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+  outline: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
