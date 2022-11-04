@@ -2,17 +2,12 @@ const pixels = document.getElementsByTagName('td');
 const eraseBtn = document.getElementById('clear-board');
 const boardInput = document.getElementById('board-size');
 const boardBtn = document.getElementById('generate-board');
-
-function turnBlackSelected() {
-  const colorPalette1 = document.getElementById('color-palette');
-  colorPalette1.firstElementChild.classList.add('selected');
-}
+const paletteInput = document.getElementById('palette-size');
+const paletteBtn = document.getElementById('generate-palette');
 
 function turnSelectedColor(event) {
   const selectedList = document.getElementsByClassName('selected')[0];
-  if (event.target.classList.contains('selected')) {
-    // empty
-  } else {
+  if (!event.target.classList.contains('selected')) {
     selectedList.classList.remove('selected');
     event.target.classList.add('selected');
   }
@@ -25,14 +20,33 @@ function randomColor() {
   return `rgb(${red}, ${green}, ${blue})`;
 }
 
-const colorPalette = document.getElementById('color-palette');
-const cores = ['black', randomColor(), randomColor(), randomColor()];
-for (let index = 0; index < 4; index += 1) {
-  const div = document.createElement('div');
-  div.className = 'color';
-  div.style.backgroundColor = cores[index];
-  div.addEventListener('click', turnSelectedColor);
-  colorPalette.appendChild(div);
+function createPaletteColors() {
+  if (paletteInput.value === '' || paletteInput.value > 35) {
+    alert('Palette inválido!');
+    return
+  }
+  removeLastPalette()
+  const colorPalette = document.getElementById('color-palette');
+  for (let index = 0; index < paletteInput.value; index += 1) {
+    const div = document.createElement('div');
+    div.className = 'color';
+    if (index === 0 && !(colorPalette.firstChild)) {
+      div.style.backgroundColor = 'black'
+      div.classList.add('selected');
+    } else {
+      div.style.backgroundColor = randomColor();
+    }
+    div.addEventListener('click', turnSelectedColor);
+    colorPalette.appendChild(div);
+  }
+  paletteInput.value = '';
+}
+
+function removeLastPalette() {
+  const colorPalette = document.getElementById('color-palette');
+  while (colorPalette.children[0]) {
+    colorPalette.removeChild(colorPalette.lastElementChild);
+  }
 }
 
 function removeLastBoard() {
@@ -54,6 +68,7 @@ function createPixelBoard() {
   const pixelBoard = document.getElementById('pixel-board');
   if (boardInput.value === '') {
     alert('Board inválido!');
+    return
   }
   removeLastBoard();
   for (let index = 0; index < boardInput.value; index += 1) {
@@ -87,10 +102,11 @@ function maxMinValue() {
 eraseBtn.addEventListener('click', eraserBoard);
 boardBtn.addEventListener('click', maxMinValue);
 boardBtn.addEventListener('click', createPixelBoard);
+paletteBtn.addEventListener('click', createPaletteColors);
 
 function onLoadSite() {
-  turnBlackSelected();
   createPixelBoard();
+  createPaletteColors();
 }
 
 window.onload = onLoadSite;
