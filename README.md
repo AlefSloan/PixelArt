@@ -6,6 +6,7 @@ A simple pixel art project
 
 In this project, you can draw in pixel art. The board can be modified in size, as well as the amount of random colors
 
+![Alt text](./images/example.png "pixel art app")
 ### Features
 
 * Pixel Board size modifier
