@@ -1,5 +1,5 @@
 body{
-  background-image: url('/public/sleepguy.png');
+  background-image: url('./public/sleepguy.png');
   background-size: cover;
   
   
